@@ -1,0 +1,50 @@
+<form #form="ngForm"  (ngSubmit)="form.form.valid && onSubmit()">
+  <div class="card">
+    <div class="card-header bg-light text-dark">
+        <h2 class="form-title">
+          {{ itemsService.lblTitle }}
+        </h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h4 class="sub-title">Title:</h4>
+                  <input type="text" name="title" #title="ngModel" [(ngModel)]="itemsService.formData.title" class="form-control"
+                  required>
+                  <div *ngIf="title.invalid && (title.dirty || title.touched || form.submitted)"
+                    class="alert alert-danger">
+                    <div *ngIf="title.errors.required">
+                      Title is Required
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <h4 class="sub-title">Description:</h4>
+
+                  <input type="text" name="description" #description="ngModel" [(ngModel)]="itemsService.formData.description" class="form-control"
+                    required>
+                    <div *ngIf="description.invalid && (description.dirty || description.touched || form.submitted)"
+                    class="alert alert-danger">
+                    <div *ngIf="description.errors.required">
+                      Description is Required
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer bg-light text-dark">
+        <button type="submit" class="btn btn-primary">
+          {{ itemsService.lblbtnName }}
+        </button>
+    </div>
+
+  </div>
+</form>

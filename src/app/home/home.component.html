@@ -1,0 +1,38 @@
+
+
+
+
+
+<div class="btn-group" *ngFor="let item of itemsService.stepsList; let i=index" >
+  <div   (click)="setStepId(item.id , i+1)"  class="arrow-pointer btn">
+    Step {{ i+1 }}
+    <a class="btn" style="color: white;" (click)="onDeleteStep(item.id)">
+      <span><strong>-</strong></span>
+     </a>
+  </div>
+  &nbsp; &nbsp; &nbsp;
+
+</div>
+<button type="button" class="arrow-pointer" (click)="addStep()">+</button>
+<br>
+<div class="row-group text-right">
+  <button type="button" class="btn btn-primary" (click)="resetForm()">Add New Item</button>
+</div>
+
+<app-items [currentStep] = "currentSelected" [currentIndex] = "currentindex"></app-items>
+<br>
+<app-add-item [currentStep] = "currentSelected"></app-add-item>
+<br>
+<div class="row">
+  <div class="col-md-6">
+
+    <button type="button" class="btn btn-primary" (click)="onPrevious()" >Previous</button>
+  </div>
+  <div class="col-md-6 text-right">
+    <button type="button" class="btn btn-primary" (click)="onNext()" >Next</button>
+  </div>
+</div>
+
+
+
+

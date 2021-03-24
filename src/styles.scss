@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '../node_modules/angular-archwizard/styles/archwizard.css';
+@import '~ngx-toastr/toastr';
+.sub-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
